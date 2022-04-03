@@ -1,0 +1,46 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5f7b7c5b-343d-4149-b696-70c7f435de8e": {
+      "ProjectGuid": "5f7b7c5b-343d-4149-b696-70c7f435de8e",
+      "DisplayName": "EBookWebAPI",
+      "ColorIndex": 0
+    },
+    "97fcfdb8-fea3-401f-b6ea-2bdf5d0fe979": {
+      "ProjectGuid": "97fcfdb8-fea3-401f-b6ea-2bdf5d0fe979",
+      "DisplayName": "DAL",
+      "ColorIndex": 1
+    },
+    "e479a05a-fc77-45eb-953d-81f3a79cce1c": {
+      "ProjectGuid": "e479a05a-fc77-45eb-953d-81f3a79cce1c",
+      "DisplayName": "BLL",
+      "ColorIndex": 2
+    },
+    "2d5201a0-3fea-4784-8b38-c959a2244491": {
+      "ProjectGuid": "2d5201a0-3fea-4784-8b38-c959a2244491",
+      "DisplayName": "BEL",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "257f9c00-4b30-423e-b1c1-f7ca1561efb1": {
+      "ProjectGuid": "257f9c00-4b30-423e-b1c1-f7ca1561efb1",
+      "DisplayName": "WebAPI",
+      "ColorIndex": 4
+    },
+    "f67068fb-91dc-44da-9d39-34f21d7934db": {
+      "ProjectGuid": "f67068fb-91dc-44da-9d39-34f21d7934db",
+      "DisplayName": "WebAPI",
+      "ColorIndex": 5
+    },
+    "1c922f04-4852-413c-bdfe-973a021d7bc7": {
+      "ProjectGuid": "1c922f04-4852-413c-bdfe-973a021d7bc7",
+      "DisplayName": "WebAPI",
+      "ColorIndex": 6
+    }
+  },
+  "NextColorIndex": 7
+}

@@ -1,0 +1,5 @@
+E:\.Net Final Project\EBookWebAPI\BEL\bin\Debug\BEL.dll
+E:\.Net Final Project\EBookWebAPI\BEL\bin\Debug\BEL.pdb
+E:\.Net Final Project\EBookWebAPI\BEL\obj\Debug\BEL.csproj.CoreCompileInputs.cache
+E:\.Net Final Project\EBookWebAPI\BEL\obj\Debug\BEL.dll
+E:\.Net Final Project\EBookWebAPI\BEL\obj\Debug\BEL.pdb
