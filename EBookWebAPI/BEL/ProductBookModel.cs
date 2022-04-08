@@ -22,7 +22,6 @@ namespace BEL
         public int Seller_Id { get; set; }
 
         public virtual AdminModel Admin { get; set; }
-        public virtual OrderDetailModel OrderDetail { get; set; }
         public virtual SellerModel Seller { get; set; }
     }
 }

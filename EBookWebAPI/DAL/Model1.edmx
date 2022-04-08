@@ -112,6 +112,16 @@
           <Property Name="DOB" Type="datetime" />
           <Property Name="Admin_Id" Type="int" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <Association Name="FK_Customers_Admins">
           <End Role="Admins" Type="Self.Admins" Multiplicity="0..1" />
           <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
@@ -137,14 +147,14 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderDetails_ProductBooks">
-          <End Role="ProductBooks" Type="Self.ProductBooks" Multiplicity="1" />
-          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="0..1" />
+          <End Role="ProductBooks" Type="Self.ProductBooks" Multiplicity="0..1" />
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ProductBooks">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="OrderDetails">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="Product_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -230,6 +240,7 @@
           <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductBooks" EntityType="Self.ProductBooks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sellers" EntityType="Self.Sellers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Customers_Admins" Association="Self.FK_Customers_Admins">
             <End Role="Admins" EntitySet="Admins" />
             <End Role="Customers" EntitySet="Customers" />
@@ -378,7 +389,7 @@
           <Property Name="Admin_Id" Type="Int32" />
           <Property Name="Seller_Id" Type="Int32" />
           <NavigationProperty Name="Admin" Relationship="Self.FK_ProductBooks_Admins" FromRole="ProductBooks" ToRole="Admins" />
-          <NavigationProperty Name="OrderDetail" Relationship="Self.FK_OrderDetails_ProductBooks" FromRole="ProductBooks" ToRole="OrderDetails" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_ProductBooks" FromRole="ProductBooks" ToRole="OrderDetails" />
           <NavigationProperty Name="Seller" Relationship="Self.FK_ProductBooks_Sellers" FromRole="ProductBooks" ToRole="Sellers" />
         </EntityType>
         <EntityType Name="Seller">
@@ -396,6 +407,16 @@
           <Property Name="Admin_Id" Type="Int32" />
           <NavigationProperty Name="Admin" Relationship="Self.FK_Sellers_Admins" FromRole="Sellers" ToRole="Admins" />
           <NavigationProperty Name="ProductBooks" Relationship="Self.FK_ProductBooks_Sellers" FromRole="Sellers" ToRole="ProductBooks" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK_Customers_Admins">
           <End Role="Admins" Type="Self.Admin" Multiplicity="0..1" />
@@ -470,14 +491,14 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrderDetails_ProductBooks">
-          <End Role="ProductBooks" Type="Self.ProductBook" Multiplicity="1" />
-          <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="0..1" />
+          <End Role="ProductBooks" Type="Self.ProductBook" Multiplicity="0..1" />
+          <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ProductBooks">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="OrderDetails">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="Product_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -515,6 +536,7 @@
           <EntitySet Name="Payments" EntityType="Self.Payment" />
           <EntitySet Name="ProductBooks" EntityType="Self.ProductBook" />
           <EntitySet Name="Sellers" EntityType="Self.Seller" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <AssociationSet Name="FK_Customers_Admins" Association="Self.FK_Customers_Admins">
             <End Role="Admins" EntitySet="Admins" />
             <End Role="Customers" EntitySet="Customers" />
@@ -671,6 +693,17 @@
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="DOB" ColumnName="DOB" />
                 <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="EbookModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -17,5 +17,23 @@ namespace WebAPI.Controllers
         {
             return ProductBookService.Get();
         }
+        [Route("api/ProductBook/Create")]
+        [HttpPost]
+        public void Add(ProductBookModel productBook)
+        {
+            ProductBookService.Add(productBook);
+        }
+        [Route("api/ProductBook/Edit")]
+        [HttpPost]
+        public void Edit(ProductBookModel productBook)
+        {
+            ProductBookService.Edit(productBook);
+        }
+        [Route("api/ProductBook/Delete")]
+        [HttpPost]
+        public void Delete(ProductBookModel productBook)
+        {
+            ProductBookService.Delete(productBook);
+        }
     }
 }

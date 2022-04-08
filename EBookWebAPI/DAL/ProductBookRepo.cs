@@ -13,23 +13,23 @@ namespace DAL
         {
             this.db = db;
         }
-        public void Add(ProductBook pb)
+        public void Add(ProductBook e)
         {
-            db.ProductBooks.Add(pb);
+            db.ProductBooks.Add(e);
             db.SaveChanges();
         }
 
-        public void Delete(ProductBook pb)
+        public void Delete(ProductBook e)
         {
-            var _pb = db.ProductBooks.FirstOrDefault(p => p.Id == pb.Id);
-            db.ProductBooks.Remove(_pb);
+            var _e = db.ProductBooks.FirstOrDefault(p => p.Id == e.Id);
+            db.ProductBooks.Remove(_e);
             db.SaveChanges();
         }
 
-        public void Edit(ProductBook pb)
+        public void Edit(ProductBook e)
         {
-            var _pb = db.Sellers.FirstOrDefault(p => p.Id == pb.Id);
-            db.Entry(_pb).CurrentValues.SetValues(pb);
+            var _e = db.ProductBooks.FirstOrDefault(p => p.Id == e.Id);
+            db.Entry(_e).CurrentValues.SetValues(e);
             db.SaveChanges();
         }
 

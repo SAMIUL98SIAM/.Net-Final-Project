@@ -9,17 +9,12 @@ namespace DAL
     public class AdminRepo
     {
         static EbookEntities db;
-        private EbookEntities db1;
-
+   
         static AdminRepo()
         {
             db = new EbookEntities();
         }
 
-        /*public AdminRepo(EbookEntities db1)
-        {
-            this.db1 = db1;
-        }*/
 
         public static List<Admin> Get()
         {

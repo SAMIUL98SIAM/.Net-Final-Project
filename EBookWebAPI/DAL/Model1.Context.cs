@@ -34,5 +34,6 @@ namespace DAL
         public DbSet<Payment> Payments { get; set; }
         public DbSet<ProductBook> ProductBooks { get; set; }
         public DbSet<Seller> Sellers { get; set; }
+        public DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

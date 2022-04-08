@@ -17,13 +17,16 @@ namespace DAL
         {
             return new CustomerRepo(db);
         }
-        public static IRepo<Seller,int> SellerDataAccess()
+        public static IRepo<Seller, int> SellerDataAccess()
         {
             return new SellerRepo(db);
         }
-        public static IRepo<ProductBook, int> ProduckBookDataAccess()
+        public static IRepo<ProductBook, int> ProductBookDataAccess()
         {
             return new ProductBookRepo(db);
         }
+
+
+
     }
 }

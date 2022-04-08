@@ -14,6 +14,11 @@ namespace DAL
     
     public partial class ProductBook
     {
+        public ProductBook()
+        {
+            this.OrderDetails = new HashSet<OrderDetail>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }
@@ -28,7 +33,7 @@ namespace DAL
         public Nullable<int> Seller_Id { get; set; }
     
         public virtual Admin Admin { get; set; }
-        public virtual OrderDetail OrderDetail { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual Seller Seller { get; set; }
     }
 }

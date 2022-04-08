@@ -18,14 +18,64 @@ namespace BLL
                 c =>
                 {
                     c.CreateMap<ProductBook, ProductBookModel>();
+                    c.CreateMap<Seller, SellerModel>();
                     c.CreateMap<Admin, AdminModel>();
-                    c.CreateMap<Seller, SellerModel>();  
                 }
             );
             var mapper = new Mapper(config);
-            var pba = DataAccessFactory.ProduckBookDataAccess();
-            var data = mapper.Map<List<ProductBookModel>>(pba.Get());
+            var sa = DataAccessFactory.ProductBookDataAccess();
+            var data = mapper.Map<List<ProductBookModel>>(sa.Get());
             return data;
         }
+
+        public static void Add(ProductBookModel productBook)
+        {
+            var config = new MapperConfiguration
+           (
+               c =>
+               {
+                   c.CreateMap<ProductBookModel, ProductBook>();
+                   c.CreateMap<SellerModel, Seller>();
+                   c.CreateMap<AdminModel, Admin>();
+               }
+           );
+            var mapper = new Mapper(config);
+            var data = mapper.Map<ProductBook>(productBook);
+            DataAccessFactory.ProductBookDataAccess().Add(data);
+
+        }
+
+        public static void Edit(ProductBookModel productBook)
+        {
+            var config = new MapperConfiguration
+               (
+                   c =>
+                   {
+                       c.CreateMap<ProductBookModel, ProductBook>();
+                       c.CreateMap<SellerModel, Seller>();
+                       c.CreateMap<AdminModel, Admin>(); ;
+                   }
+               );
+            var mapper = new Mapper(config);
+            var data = mapper.Map<ProductBook>(productBook);
+            DataAccessFactory.ProductBookDataAccess().Edit(data);
+
+        }
+        public static void Delete(ProductBookModel productBook)
+        {
+            var config = new MapperConfiguration
+               (
+                   c =>
+                   {
+                       c.CreateMap<ProductBookModel, ProductBook>();
+                       c.CreateMap<SellerModel, Seller>();
+                       c.CreateMap<AdminModel, Admin>(); ;
+                   }
+               );
+            var mapper = new Mapper(config);
+            var data = mapper.Map<ProductBook>(productBook);
+            DataAccessFactory.ProductBookDataAccess().Delete(data);
+        }
+       
     }
 }
