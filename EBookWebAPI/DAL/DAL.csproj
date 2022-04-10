@@ -51,6 +51,7 @@
     <Compile Include="About.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="AboutRepo.cs" />
     <Compile Include="Admin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -63,6 +64,7 @@
     </Compile>
     <Compile Include="CustomerRepo.cs" />
     <Compile Include="DataAccessFactory.cs" />
+    <Compile Include="HomeRepo.cs" />
     <Compile Include="IRepo.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>

@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
+    
+    public interface IRepo<T>
+    { 
+        void Add(T e);
+        List<T> Get();
+        void Edit(T e);
+        void Delete(T e);
+    }
     public interface IRepo<T,ID>
     {
         void Add(T e);

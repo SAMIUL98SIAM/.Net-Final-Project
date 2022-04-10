@@ -25,7 +25,10 @@ namespace DAL
         {
             return new ProductBookRepo(db);
         }
-
+        public static IRepo<About> AboutDataAccess()
+        {
+            return new AboutRepo(db);
+        }
 
 
     }
