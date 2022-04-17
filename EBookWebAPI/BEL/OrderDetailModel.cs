@@ -11,6 +11,7 @@ namespace BEL
         public int Id { get; set; }
         public string Address { get; set; }
         public int Quantity { get; set; }
+        public string Proccess { get; set; }
         public int Unitprice { get; set; }
         public int Product_Id { get; set; }
         public int Order_Id { get; set; }

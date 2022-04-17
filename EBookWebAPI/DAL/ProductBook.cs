@@ -26,7 +26,6 @@ namespace DAL
         public string Category { get; set; }
         public Nullable<int> Quantity { get; set; }
         public Nullable<int> Status { get; set; }
-        public string Process { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
         public string Image { get; set; }
         public Nullable<int> Admin_Id { get; set; }

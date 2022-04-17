@@ -11,6 +11,19 @@ namespace BLL
 {
     public class HomeService
     {
+
+        public static ProductBookModel BookDetails(int id)
+        {
+            var config = new MapperConfiguration(c =>
+            {
+                c.CreateMap<ProductBook, ProductBookModel>();
+                c.CreateMap<Seller, SellerModel>();
+                c.CreateMap<Admin, AdminModel>();
+            });
+            var mapper = new Mapper(config);
+            var data = mapper.Map<ProductBookModel>(HomeRepo.BookDetails(id));
+            return data;
+        }
         public static void Contact(ContactModel contact)
         {
             var config = new MapperConfiguration

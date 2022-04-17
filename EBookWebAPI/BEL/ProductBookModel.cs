@@ -15,13 +15,12 @@ namespace BEL
         public string Category { get; set; }
         public int Quantity { get; set; }
         public int Status { get; set; }
-        public string Process { get; set; }
         public DateTime Date { get; set; }
         public string Image { get; set; }
         public int Admin_Id { get; set; }
         public int Seller_Id { get; set; }
 
-        //public virtual AdminModel Admin { get; set; }
-        //public virtual SellerModel Seller { get; set; }
+        public virtual AdminModel Admin { get; set; }
+        public virtual SellerModel Seller { get; set; }
     }
 }

@@ -4,17 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c800196bd05f41238a0522c89e6e8473" Name="Diagram1">
+      <Diagram DiagramId="f8fc898e3921481d9956f9ca4017b7be" Name="Diagram1">
         <EntityTypeShape EntityType="EbookModel.About" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EbookModel.Admin" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="EbookModel.Contact" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EbookModel.Customer" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="EbookModel.OrderDetail" Width="1.5" PointX="7.5" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EbookModel.OrderDetail" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EbookModel.Order" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EbookModel.Payment" Width="1.5" PointX="10.5" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="EbookModel.ProductBook" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="EbookModel.Seller" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EbookModel.sysdiagram" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EbookModel.Seller" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
         <AssociationConnector Association="EbookModel.FK_Customers_Admins" ManuallyRouted="false" />
         <AssociationConnector Association="EbookModel.FK_ProductBooks_Admins" ManuallyRouted="false" />
         <AssociationConnector Association="EbookModel.FK_Sellers_Admins" ManuallyRouted="false" />

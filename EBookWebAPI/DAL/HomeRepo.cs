@@ -16,6 +16,13 @@ namespace DAL
         {
             db = new EbookEntities();
         }
+
+
+        public static ProductBook BookDetails(int id)
+        {
+            return db.ProductBooks.FirstOrDefault(pb => pb.Id == id);
+        }
+
         public static void Contact(Contact model)
         {
             using (MailMessage mail = new MailMessage("samiulsiam59@gmail.com", model.Too))

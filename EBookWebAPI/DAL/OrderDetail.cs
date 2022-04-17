@@ -17,6 +17,7 @@ namespace DAL
         public int Id { get; set; }
         public string Address { get; set; }
         public Nullable<int> Quantity { get; set; }
+        public string Proccess { get; set; }
         public Nullable<double> Unitprice { get; set; }
         public Nullable<int> Product_Id { get; set; }
         public Nullable<int> Order_Id { get; set; }
